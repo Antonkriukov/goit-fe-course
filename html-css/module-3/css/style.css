@@ -49,13 +49,13 @@ margin-bottom: 28px;
 .article_text { 
      color: #626262;
      font-size: 14px; 
-     text-align: justify; 
+     text-align: left; 
      margin-bottom: 137px; 
 }
 .article_text_bottom {
     color: #626262;
     font-size: 14px; 
-    text-align: justify;
+    text-align: left;
     margin-bottom: 54px;
 }
  input {
