@@ -1,0 +1,155 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.wrapper {
+    margin: auto;
+    width: 1280px;
+    padding: 40px;
+}
+.menu  {
+    text-decoration: none;
+    color: #0f0101;
+    margin-right: 0px;
+    text-transform: uppercase;
+    font-family: Myriad Pro;
+    float: right;
+    margin-left: 34px;
+}
+ .menu a {
+    text-decoration: none;
+    color: #0f0101;
+    margin: 0px 30px 30px 0px;
+    text-transform: uppercase;
+    font-family: Myriad Pro;
+     
+ }
+.menu a:hover {
+    color: #1abc9c;
+}
+.menu a:last-child{
+    margin-right: 0px;
+}
+.article :nth-child(n+6n){
+    margin-left: 0px;
+}
+
+.clearfix::after  {
+    display: table;
+    content: "";
+    clear: both;
+}
+
+.logo {
+  font-size: 30px;
+  color: #212121;
+  text-transform: uppercase;
+  float: left;
+  
+}
+.logo::first-letter {
+    color: #1abc9c;
+    font-weight: 700; 
+    
+}
+
+
+.heder {
+    margin-bottom: 100px;
+
+}
+.TITLE_1 {
+    font-size: 30px;
+    color: #555252; 
+    margin-bottom: 100px;
+    text-align: center;
+    font-family: Myriad Pro;
+    clear: left;
+    
+    
+}
+    
+    
+
+.article{
+    float: left;
+    margin: 0px 30px 20px 0px;
+    
+}
+.product_name  {
+    margin-bottom: 40px;
+    background-color:#323232;
+    width: 200px; 
+    float: left;
+    color: #fff;
+    text-align: justify;
+    font-family: Myriad Pro;
+    text-transform: uppercase;
+    font-size: 18px;
+    padding: 13px;
+}
+.price:hover{
+    background-color: #1abc9c;
+}
+.product_name:hover {
+    background-color: #1abc9c;
+}
+.price {
+    width: 55px;
+    background-color: #8c8c8c;
+    float: left;
+    font-size: 18px;
+    padding: 13px
+}
+.product {
+    width: 255px;
+    height: 322px;
+
+}
+.content{
+    margin-bottom: 100px;
+}
+.background {
+    background-color:#e9f0fd
+}
+.TITLE_2 {
+    font-size: 30px;
+    color: #555252; 
+    margin-bottom: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Myriad Pro;
+}
+.min_img {
+    margin-bottom: 15px;
+}
+.min_news {
+    font-size: 14px;
+    font-family: Myriad Pro;
+    text-align: left;
+    margin-bottom: 50px;
+    font-weight: 700;
+    display: block;
+}
+
+.min_text {
+    display: block;
+    margin-bottom: 30px;
+    line-height: 1.3;
+    font-family: Myriad Pro;
+}
+.blog_1 {
+    float: left;
+    width: 350px;
+    margin: 0px 20px 20px 0px;
+}input {
+    width: 160px;
+    height: 50px;
+    margin: 0px 0px 0px 0px;
+    border: solid 1px grey;
+    font-size: 20px;
+    background-color: #1abc9c;
+    color: #fff;
+    filter: drop-shadow(5px 2px 1px #c4c4c4);
+}
