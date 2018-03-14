@@ -3,10 +3,14 @@
     margin: 0px;
     box-sizing: border-box;
 }
+.body {
+    min-height: 100vh;
+    font-family: Myriad Pro;
+}
 .wrapper {
     margin: auto;
-    width: 1280px;
-    padding: 40px;
+    max-width: 1110px;
+    padding: 40px 0px 40px 0px;
 }
 .menu  {
     text-decoration: none;
@@ -31,24 +35,25 @@
 .menu a:last-child{
     margin-right: 0px;
 }
-.article :nth-child(n+6n){
-    margin-left: 0px;
+.article:nth-child(4n+4){
+    margin-right: 0px;
 }
 
-.clearfix::after  {
+.clearfix {
     display: table;
     content: "";
     clear: both;
 }
 
-.logo {
+ .logo a {
   font-size: 30px;
   color: #212121;
   text-transform: uppercase;
   float: left;
+  text-decoration: none;
   
 }
-.logo::first-letter {
+.logo a::first-letter {
     color: #1abc9c;
     font-weight: 700; 
     
@@ -66,19 +71,24 @@
     text-align: center;
     font-family: Myriad Pro;
     clear: left;
-    
-    
-}
-    
+     }
+
+     .TITLE_1:after {
+       
+   content: "";
+   height: 2px;
+   width: 0;
+   }
     
 
 .article{
     float: left;
-    margin: 0px 30px 20px 0px;
+    margin: 0px 30px 40px 0px;
+    width: 255px;
     
 }
 .product_name  {
-    margin-bottom: 40px;
+    
     background-color:#323232;
     width: 200px; 
     float: left;
@@ -88,38 +98,42 @@
     text-transform: uppercase;
     font-size: 18px;
     padding: 13px;
+    height: 48px;
 }
-.price:hover{
+.product_name:hover  {
     background-color: #1abc9c;
 }
-.product_name:hover {
-    background-color: #1abc9c;
-}
+
+
 .price {
     width: 55px;
     background-color: #8c8c8c;
     float: left;
     font-size: 18px;
-    padding: 13px
+    padding: 13px;
+    height: 48px;
 }
-.product {
+.article img {
     width: 255px;
     height: 322px;
+    background-color:#e9f0fd;
+    
 
 }
 .content{
     margin-bottom: 100px;
 }
-.background {
-    background-color:#e9f0fd
-}
+
 .TITLE_2 {
     font-size: 30px;
     color: #555252; 
     margin-bottom: 100px;
     text-align: center;
-    text-transform: uppercase;
     font-family: Myriad Pro;
+    clear: left;
+    bottom: -10px;
+    background-color: green;
+    display: block;
 }
 .min_img {
     margin-bottom: 15px;
@@ -132,7 +146,11 @@
     font-weight: 700;
     display: block;
 }
-
+.blog_1:nth-child(3n+3) {
+    margin-right: 0px;
+    
+   
+}
 .min_text {
     display: block;
     margin-bottom: 30px;
@@ -142,8 +160,9 @@
 .blog_1 {
     float: left;
     width: 350px;
-    margin: 0px 20px 20px 0px;
-}input {
+    margin: 0px 30px 20px 0px;
+}
+.blog_1 a {
     width: 160px;
     height: 50px;
     margin: 0px 0px 0px 0px;
@@ -152,4 +171,9 @@
     background-color: #1abc9c;
     color: #fff;
     filter: drop-shadow(5px 2px 1px #c4c4c4);
+    text-transform: uppercase;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 10px; 
 }
