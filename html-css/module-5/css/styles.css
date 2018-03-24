@@ -1,0 +1,91 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.wrapper {
+    width: 100%;
+    max-width: 1170px;
+    height: 100%;
+    margin :0 auto;
+    position: relative;
+}
+    
+.clearfix::after {
+     display: table;
+     content: "";
+     clear: both;
+    }
+    
+    
+    
+  
+
+.logo  {
+    font-size: 30px;
+    float: left;
+    color: #555252;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    
+  }
+  .logo::first-letter {
+      color: #1abc9c;
+      font-weight: 700; 
+      
+  }
+.menu {
+    color: #212121;
+    margin-right: 0px;
+    text-transform: uppercase;
+    font-family: Myriad Pro;
+    float: right;
+    margin-left: 34px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #0f0101;
+    margin: 0px 30px 30px 0px;
+    text-transform: uppercase;
+    font-family: Myriad Pro;
+    text-align: center;
+     
+ }
+.menu a:hover {
+    color: #1abc9c;
+}
+.menu a:last-child{
+    margin-right: 0px;
+}
+.article:nth-child(4n+4){
+    margin-right: 0px;
+}
+.slider{
+background:linear-gradient( rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)),url("../img/slide4.jpg"); 
+width: 100%;
+height: 600px;
+background-repeat: no-repeat; 
+background-position: center center;
+}
+.slider h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    text-transform: uppercase;
+    font-family: Myriad Pro;
+    color: #fff;
+    
+    
+}
+.select h2{
+    text-align: center;
+    font-size: 60px;
+    text-transform: uppercase;
+    font-family: Myriad Pro;
+    color: #515151;
+
+}

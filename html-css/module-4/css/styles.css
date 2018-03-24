@@ -77,10 +77,23 @@
        
    content: "";
    height: 2px;
-   width: 0;
+   width: 100px;
+   display: block;
+   border-bottom: 4px solid;
+  margin: auto;
+  color: #1abc9c;
    }
     
-
+   .TITLE_2:after {
+       
+    content: "";
+    height: 2px;
+    width: 100px;
+    display: block;
+    border-bottom: 4px solid;
+   margin: auto;
+   color: #1abc9c;
+    }
 .article{
     float: left;
     margin: 0px 30px 40px 0px;
@@ -100,7 +113,10 @@
     padding: 13px;
     height: 48px;
 }
-.product_name:hover  {
+.article:hover a  {
+    background-color: #1abc9c;
+}
+.article:hover span {
     background-color: #1abc9c;
 }
 
@@ -131,9 +147,7 @@
     text-align: center;
     font-family: Myriad Pro;
     clear: left;
-    bottom: -10px;
-    background-color: green;
-    display: block;
+    
 }
 .min_img {
     margin-bottom: 15px;
@@ -176,4 +190,13 @@
     display: block;
     text-align: center;
     padding: 10px; 
+}
+.min_news::after {
+    content: "";
+    display: block;
+    border-bottom: 3px solid;
+    margin-right: auto;
+    color:#1abc9c;
+    height: 3px;
+    width: 100px;
 }
