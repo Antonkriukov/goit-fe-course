@@ -3,9 +3,11 @@
     padding: 0px;
     box-sizing: border-box;
 }
+
+
 .wrapper {
     width: 100%;
-    max-width: 1170px;
+    max-width: 1110px;
     height: 100%;
     margin :0 auto;
     position: relative;
@@ -27,6 +29,8 @@
     color: #555252;
     text-transform: uppercase;
     text-decoration: none;
+    padding: 20px;
+
 
     
   }
@@ -35,13 +39,15 @@
       font-weight: 700; 
       
   }
-.menu {
+.menu  {
     color: #212121;
-    margin-right: 0px;
     text-transform: uppercase;
     font-family: Myriad Pro;
     float: right;
     margin-left: 34px;
+    margin-bottom: 20px;
+    padding: 20px;
+   
 }
 
 .menu a {
@@ -64,10 +70,11 @@
 }
 .slider{
 background:linear-gradient( rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)),url("../img/slide4.jpg"); 
-width: 100%;
+width: 1600px;
 height: 600px;
 background-repeat: no-repeat; 
 background-position: center center;
+margin: 0px auto 47px ;
 }
 .slider h2 {
     position: absolute;
@@ -79,13 +86,63 @@ background-position: center center;
     font-family: Myriad Pro;
     color: #fff;
     
-    
 }
+
 .select h2{
     text-align: center;
     font-size: 60px;
     text-transform: uppercase;
     font-family: Myriad Pro;
     color: #515151;
+    margin-bottom: 40px;
 
+}
+.select h2::after{
+    content: "";
+   height: 4px;
+   width: 200px;
+   display: block;
+   border-bottom: 4px solid;
+  margin: auto;
+  color: #1abc9c;
+}
+.card {
+    float: left;
+    margin: 0px 30px 40px 0px;
+    width: 255px;
+    background: #424242;
+
+    
+}
+
+
+.product_name  {
+    
+    background-color:#323232;
+    width: 200px; 
+    float: left;
+    color: #fff;
+    text-align: justify;
+    font-family: Myriad Pro;
+    text-transform: uppercase;
+    font-size: 18px;
+    padding: 13px;
+    height: 48px;
+}
+.price {
+    width: 55px;
+    background-color: #8c8c8c;
+    float: left;
+    font-size: 18px;
+    padding: 13px;
+    height: 48px;
+}
+.card:hover a  {
+    background-color: #1abc9c;
+}
+.card:hover span {
+    background-color: #1abc9c;
+}
+.card:last-child {
+    margin-right: 0px;
 }
