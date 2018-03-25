@@ -2,6 +2,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+
 }
 
 
@@ -40,12 +41,8 @@
       
   }
 .menu  {
-    color: #212121;
-    text-transform: uppercase;
-    font-family: Myriad Pro;
     float: right;
     margin-left: 34px;
-    margin-bottom: 20px;
     padding: 20px;
    
 }
@@ -65,28 +62,45 @@
 .menu a:last-child{
     margin-right: 0px;
 }
-.article:nth-child(4n+4){
+.card:nth-child(4n+4){
     margin-right: 0px;
 }
-.slider{
+.main{
 background:linear-gradient( rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)),url("../img/slide4.jpg"); 
 width: 1600px;
 height: 600px;
-background-repeat: no-repeat; 
+background-repeat: no-repeat no-repeat; 
 background-position: center center;
-margin: 0px auto 47px ;
+margin: 0px auto ;
 }
-.slider h2 {
-    position: absolute;
+
+.slider  {
     top: 50%;
+    position: absolute;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
+    text-align: left;  
+    width: 100%;
+    text-align: center;
+}
+
+.slider h2 {
     font-size: 60px;
     text-transform: uppercase;
     font-family: Myriad Pro;
-    color: #fff;
+    color:#fff;
     
 }
+.slider p {
+    display: block;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: Myriad Pro;
+    color:#fff;
+    
+
+}
+
 
 .select h2{
     text-align: center;
@@ -97,52 +111,193 @@ margin: 0px auto 47px ;
     margin-bottom: 40px;
 
 }
+
+.button_left a {
+    text-decoration: none;
+    border: 2px solid #424242;
+    background-color: #1abc9c;
+    width: 104px;
+    height: 104px;
+    position: absolute;
+    left: 100px;
+    bottom:0px;
+    font-size: 90px;
+    color: #fff;
+    text-align: center;
+
+}
+.button_right a {
+    text-decoration: none;
+    border: 2px solid #424242;
+    background-color: #1abc9c;
+    width: 104px;
+    height: 104px;
+    position: absolute;
+    right: 100px;
+    bottom: 0px;
+    
+    font-size: 90px;
+    color: #fff;
+    text-align: center;
+
+}
+.button_right:hover  {
+ opacity: 0.5;
+}
+.button_left:hover{
+    opacity: 0.5;
+}
+
+.select{
+    background-color: #e9f0fd;
+    width: 1600px;
+    margin: auto;
+    height: 100%;
+  
+}
 .select h2::after{
     content: "";
    height: 4px;
-   width: 200px;
+   width: 165px;
    display: block;
-   border-bottom: 4px solid;
+   border-bottom: 5px solid;
   margin: auto;
   color: #1abc9c;
 }
 .card {
-    float: left;
-    margin: 0px 30px 40px 0px;
+    display: inline-block;
+    position: relative;
     width: 255px;
-    background: #424242;
+    margin-right: 2%;
+    
+    
+}
+.cards{
+    margin-bottom: 100px;
+}
+.card:last-child{
+    margin-right: 0px;
+}
+.card_image{
+    height: 322px;
+    width:100%;
+    display: block;
+    object-fit: cover;
 
     
 }
+.card_content{
+    width: 100%;
+    display: block;
 
-
-.product_name  {
-    
-    background-color:#323232;
-    width: 200px; 
-    float: left;
-    color: #fff;
-    text-align: justify;
-    font-family: Myriad Pro;
+        
+      }
+.card_icons{
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+} 
+.card_icon{
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 2px solid #fff;
+    text-decoration: none;
     text-transform: uppercase;
-    font-size: 18px;
-    padding: 13px;
-    height: 48px;
 }
-.price {
-    width: 55px;
-    background-color: #8c8c8c;
-    float: left;
-    font-size: 18px;
-    padding: 13px;
-    height: 48px;
+
+.card_icon a {
+    text-transform: uppercase;
+    text-decoration: none;
 }
-.card:hover a  {
-    background-color: #1abc9c;
+
+.card:hover {
+    background: #434343;
 }
-.card:hover span {
-    background-color: #1abc9c;
+.time {
+    background-image: url("https://image.flaticon.com/icons/svg/149/149316.svg");
 }
+.heart{
+    background-image: url("https://image.flaticon.com/icons/svg/149/149217.svg");
+}
+.basket{
+    background-image: url("https://image.flaticon.com/icons/svg/626/626443.svg");
+   
+}
+.mixing {
+    background-image: url("https://image.flaticon.com/icons/svg/2/2796.svg");
+}
+
 .card:last-child {
     margin-right: 0px;
+
+}
+
+
+
+.card:hover >.card_icons{
+    display: block;
+}
+.card_icon:hover {
+    background-color:  #1abc9c;
+
+}
+.card_name {
+
+    background-color: #323232;
+    font-size: 18px;
+    font-family: "Roboto";
+    text-transform: uppercase;
+    line-height: 1.778;
+    width: 79%;
+    display: inline-block;
+
+}
+.card_price{
+    background-color: #8c8c8c;
+    font-size: 18px;
+    font-family: "Roboto";
+    text-transform: uppercase;
+    line-height: 1.778;
+    width: 19%;
+    display: inline-block;
+
+    
+    
+
+   
+} 
+.card_image:hover {
+    color: #424242;
+    opacity: 52%;
+}
+.footer {
+    background-color: #323232;
+    width: 1600px;
+    margin:auto;
+    
+
+}
+.footer a{
+    color: #fff;
+}
+.footer span{
+    color:#fff;
+}
+.card:hover span  {
+    background-color:  #1abc9c;
+}
+.card:hover a {
+    background-color:  #1abc9c;
+
+}
+.background {
+    background-color: #323232;
 }
