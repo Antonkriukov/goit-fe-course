@@ -4,112 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:300,700,900" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
-    <header>
-    <div class="wrapper clearfix">
+<!--BEGIN HEADER-->
+<header class="header_main ">
+    <div class="wrapper">
         <a class="logo" href="#">mart</a>
         <nav class="menu">
-            
             <a href="#">home</a>
             <a href="#">about us</a>
             <a href="#">page</a>
-            <a href="#">shope</a>
+            <a href="#">shop</a>
             <a href="#">blog</a>
             <a href="#">contact us</a>
-            
         </nav>
     </div>
 </header>
-<div class="main">
-        <div class="wrapper">
-    <div class="slider">
-        <h2>AFFORDABLE PARIS TOURS</h2>
-        <p>CITY TOURS / TOUR TICKETS / TOUR GUIDES</p>
-        <div class="button_left"><a href="#">&lt;</a></div>
-        <div class="button_right"><a href="#">&gt;</a></div>
-         </div>
-        </div>
-</div>
-    
+<!--END HEADER-->
 
-    <div class="select">
-    
-        <div class="wrapper">  
-        <h2>NEW COLLECTION</h2>
-        
-        <div class="cards">
-        <div class="card">
-            <img class="card_image" src="img/category-1.jpg" alt="" width="255px" height="322px">
-            <div class="card_icons">
-                <i class="card_icon heart"></i>
-                <i class="card_icon mixing"></i>
-                <i class="card_icon time"></i>
-                <i class="card_icon basket"></i>
-            </div>
-        <
-           <div class="card_content"> 
-            <a class="card_name">WOMAN shirt</a>
-            <span class="card_price">31$</span>
-            </div>
-            </div>
-            
-            <div class="card">
-                    <img class="card_image" src="img/category-2.jpg" alt="" width="255px" height="322px">
-                    <div class="card_icons">
-                        <i class="card_icon heart"></i>
-                        <i class="card_icon mixing"></i>
-                        <i class="card_icon time"></i>
-                        <i class="card_icon basket"></i>
-                    </div>
-                   <div class="card_content"> 
-                    <a class="card_name">WOMAN shirt</a>
-                    <span class="card_price">31$</span>
-                    </div>
-                    </div>
-                    
-                    <div class="card">
-                            <img class="card_image" src="img/category-3.jpg" alt="" width="255px" height="322px">
-                            <div class="card_icons">
-                                <i class="card_icon heart"></i>
-                                <i class="card_icon mixing"></i>
-                                <i class="card_icon time"></i>
-                                <i class="card_icon basket"></i>
-                            </div>
-                           <div class="card_content"> 
-                            <a class="card_name">WOMAN shirt </a>
-                            <span class="card_price">31$</span>
-                            </div>
-                            </div>       
-                            
-                            <div class="card">
-                                    <img class="card_image" src="img/category-4.jpg" alt="" width="255px" height="322px">
-                                    <div class="card_icons">
-                                        <i class="card_icon heart"></i>
-                                        <i class="card_icon mixing"></i>
-                                        <i class="card_icon time"></i>
-                                        <i class="card_icon basket" ></i>
-                                    </div>
-                                   <div class="card_content"> 
-                                    <a class="card_name">WOMAN shirt</a> 
-                                    <span class="card_price">31$</span>
-                                   
-                                    </div>
-                                   </div>      
-                    </div>
-                    
-                  
+<!--BEGIN MAIN SLIDER-->
 
- <div class="footer">
+<section class="slider">
     <div class="wrapper">
-     <span>All Rights Reserved © Dokan | Designed</span>
-     <a>hemenGraph</a>
-   </div>
+        <a href="#"  class="slider_left"><i class="icon-left-arrow"></i></a>
+            <div class="slider_elem_text active">
+                <h2 class="slider_title">AFFORDABLE PARIS TOURS</h2>
+                <p class="slider_text">CITY TOURS / TOUR TICKETS / TOUR GUIDES</p>
+            </div>
+        <a href="#" class="slider_right"><i class="icon-right-arrow"></i></a>
     </div>
- 
+</section>
+<!--END MAIN SLIDER-->
+
+<!--BEGIN CARD LIST-->
+
+<main class="card_block">
+    <div class="wrapper">
+        <h3 class="title_block">NEW COLLECTION</h3>
+        <div class="card_list clearfix">
+            <div class="card">
+                <div class="card_body">
+                    <img src="img/category-1.jpg" alt="">
+                    <div class="card_control">
+                        <div class="card_control_link">
+                            <a href="#"><i class="icon-like"></i></a>
+                            <a href="#"><i class="icon-shuffle-arrows"></i></a>
+                            <a href="#"><i class="icon-time"></i></a>
+                        </div>
+                        <button class="card_basket"><i class="icon-shopping-cart"></i>add to cart</button>
+                    </div>
+                </div>
+                <div class="card_value clearfix">
+                    <p class="card_name">Blue Tshirt</p>
+                    <span class="card_price">$26</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_body">
+                    <img src="img/category-2.jpg" alt="">
+                    <div class="card_control">
+                        <div class="card_control_link">
+                            <a href="#"><i class="icon-like"></i></a>
+                            <a href="#"><i class="icon-shuffle-arrows"></i></a>
+                            <a href="#"><i class="icon-time"></i></a>
+                        </div>
+                        <button class="card_basket"><i class="icon-shopping-cart"></i>add to cart</button>
+                    </div>
+                </div>
+                <div class="card_value">
+                    <p class="card_name">WOMAN shirt</p>
+                    <span class="card_price">$31</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_body">
+                    <img src="img/category-3.jpg" alt="">
+                    <div class="card_control">
+                        <div class="card_control_link">
+                            <a href="#"><i class="icon-like"></i></a>
+                            <a href="#"><i class="icon-shuffle-arrows"></i></a>
+                            <a href="#"><i class="icon-time"></i></a>
+                        </div>
+                        <button class="card_basket"><i class="icon-shopping-cart"></i>add to cart</button>
+                    </div>
+                </div>
+                <div class="card_value">
+                    <p class="card_name">YELLOW Tshirt</p>
+                    <span class="card_price">$21</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_body">
+                    <img src="img/category-4.jpg" alt="">
+                    <div class="card_control">
+                        <div class="card_control_link">
+                            <a href="#"><i class="icon-like"></i></a>
+                            <a href="#"><i class="icon-shuffle-arrows"></i></a>
+                            <a href="#"><i class="icon-time"></i></a>
+                        </div>
+                        <button class="card_basket"><i class="icon-shopping-cart"></i>add to cart</button>
+                    </div>
+                </div>
+                <div class="card_value">
+                    <p class="card_name">Cool lingerie</p>
+                    <span class="card_price">$56</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!--END CARD LIST-->
+
+<!--BEGIN FOOTER-->
+
+<footer class="footer_main">
+    <div class="wrapper">
+        <p class="copyright">All Rights Reserved &#169; Dokan | Designed <a href="#">ThemenGraph</a></p>
+    </div>
+</footer>
+
+<!--END FOOTER-->
 
 </body>
 </html>
