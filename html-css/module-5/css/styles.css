@@ -6,9 +6,9 @@
 }
 
 .wrapper {
-    width: 100%;
-    max-width: 1120px;
-    margin: auto;
+    widows: 100%;
+    max-width: 1124px;
+    margin: 0 auto;
 }
 
 .title_block {
@@ -17,6 +17,7 @@
     text-align: center;
     font: 900 48px/1.4 "Roboto", sans-serif;
     padding-bottom: 30px;
+    margin-bottom: 100px;
 }
 
 .title_block::before {
@@ -29,6 +30,11 @@
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }
 
 /*end common*/
@@ -93,34 +99,42 @@
 
 /*main slider*/
 
-.slider {
- background:linear-gradient( rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.52)),url("../img/slide4.jpg"); 
+.slider{
 width: 100%;
-height: 600px;
-background-repeat: no-repeat no-repeat; 
-background-position: center center;
-margin: 0px auto ;
+max-width: 1600px;
+margin: auto;
 position: relative;
 }
 
 
-.slider_left  {
-    position: absolute;
-    bottom: 50%;
-    width: 100px;
-    height: 100px;
-    background-color: #1abc9c;
+.slider_elem_text .slider_title {
+    font: 700 60px/1.2 "Roboto", sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: -1.2px;
 
 }
-.slider_right{
+
+.slider_elem_text .slider_text {
+    font: 300 24px/1.2 "Roboto", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: -0.48px;
+}
+ 
+.slider_elem_text{
+position: absolute;
+
+
+}
+ .slider_left,.slider_right {
+    background-color: rgba(78, 198, 171, .65);
+    color: #fff;
+    align-items: center;
+    width: 104px;
+    height: 104px;
+    border-radius: 0;
+    border: none;
     position: absolute;
-    bottom: 50%;
-    right: 0px;
-    width: 100px;
-    height: 100px;
-    background-color: #1abc9c;
-
-
 }
 
 
@@ -129,6 +143,154 @@ position: relative;
 
 /*card clock*/
 
+.card_list .card {
+display: inline-block;
+}
+
+.card_list .card:nth-child(4n + 4) {
+    margin-right: 0;
+}
+
+.card_list .card:nth-child(4n + 1) {
+    margin-left: 0;
+}
+
+
+.card_block {
+    padding: 90px 0 80px;
+    background-color: #e9f0fd;
+
+}
+.card {
+    width: 100%;
+    max-width: 255px;
+    margin: 0 30px 30px 0px;
+    position: relative;
+}
+
+.card:hover .card_control {
+    
+}
+
+.card:hover .card_name {
+    background-color: #1abc9c;
+}
+
+.card:hover .card_price {
+    background-color: #7fd9c8;
+}
+
+.card:hover .card_body::before {
+    opacity: 0.55;
+    position: absolute;
+}
+
+.card_body {
+    position: relative;
+    overflow: hidden;
+    height: 285px;
+    display: block;
+    align-items: center;
+    background-color: #fff;
+}
+
+.card_body::before {
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 10px solid #ffffff;
+    background-color: #000000;
+    opacity: 0;
+   
+}
+
+.card_body .card_control { 
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    align-items: center;
+    opacity: 0;
+
+ 
+}
+
+
+.card_control .card_basket {
+    width: 166px;
+    border: 1px solid #ffffff;
+    background-color: #323232;
+    height: 50px;
+    border-radius: 0;
+    color: #fff;
+    display: block;
+    text-transform: uppercase;
+    font: 400 14px/1 "Open Sans", sans-serif;
+  
+}
+
+.card_control .card_basket:hover {
+    background-color: #7fd9c8;
+}
+
+.card_control .card_basket i {
+    font-size: 27px;
+    margin-right: 10px;
+}
+
+ .card_control_link a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ffffff;
+    color: #fff;
+    background-color: transparent;
+    margin: 0 4px;
+
+   
+}
+
+.card_control .card_control_link a:hover {
+    border-color: #1abc9c;
+    background-color: #1abc9c;
+}
+
+.card_body img {
+    height: 100%;
+    width: auto;
+}
+
+.card .card_value {
+    display: block;
+    font: 700 18px/1 "Roboto", sans-serif;
+}
+
+.card .card_name {
+    width:200px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    background-color: #323232;
+    color: #fff;
+    text-transform: uppercase;
+    float: left;
+    text-align: center;
+}
+
+.card .card_price {
+    width: 55px;
+    height: 40px;
+    line-height: 40px;
+    background-color: #8c8c8c;
+    text-align: center;
+    color: #fff;
+    float: left;
+
+}
 
 /*end card block*/
 
