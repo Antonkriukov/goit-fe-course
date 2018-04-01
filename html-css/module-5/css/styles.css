@@ -7,7 +7,7 @@
 
 .wrapper {
     widows: 100%;
-    max-width: 1124px;
+    max-width: 1110px;
     margin: 0 auto;
 }
 
@@ -99,14 +99,26 @@
 
 /*main slider*/
 
-.slider{
+.slider {
 width: 100%;
 max-width: 1600px;
 margin: auto;
 position: relative;
 }
+.baner {
+    width: 100%;
 
-
+}
+.slider::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: rgba(0, 0, 2, .52);
+}
 .slider_elem_text .slider_title {
     font: 700 60px/1.2 "Roboto", sans-serif;
     text-transform: uppercase;
@@ -123,6 +135,10 @@ position: relative;
  
 .slider_elem_text{
 position: absolute;
+top:200px;
+left:400px;
+color: #fff;
+
 
 
 }
@@ -132,9 +148,32 @@ position: absolute;
     align-items: center;
     width: 104px;
     height: 104px;
-    border-radius: 0;
     border: none;
     position: absolute;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.slider_left {
+left:290px;
+top:210px;
+background-image: url("https://image.flaticon.com/icons/svg/126/126492.svg");
+fill:#fff;
+}
+.slider_right{
+    top:210px;
+    right: 350px; 
+    background-image: url("https://image.flaticon.com/icons/svg/126/126490.svg");
+    fill:#fff;
+}
+ 
+.slider_left:hover{
+    background-color: #1abc9c;
+}
+.slider_right:hover{
+    background-color: #1abc9c;
 }
 
 
@@ -142,6 +181,10 @@ position: absolute;
 
 
 /*card clock*/
+.card_block .title_block {
+    margin-bottom: 82px;
+}
+
 
 .card_list .card {
 display: inline-block;
@@ -151,9 +194,6 @@ display: inline-block;
     margin-right: 0;
 }
 
-.card_list .card:nth-child(4n + 1) {
-    margin-left: 0;
-}
 
 
 .card_block {
@@ -164,39 +204,13 @@ display: inline-block;
 .card {
     width: 100%;
     max-width: 255px;
-    margin: 0 30px 30px 0px;
+    margin: 0  25px 30px 0px;
     position: relative;
 }
-
-.card:hover .card_control {
-    
-}
-
-.card:hover .card_name {
-    background-color: #1abc9c;
-}
-
-.card:hover .card_price {
-    background-color: #7fd9c8;
-}
-
-.card:hover .card_body::before {
-    opacity: 0.55;
-    position: absolute;
-}
-
-.card_body {
-    position: relative;
-    overflow: hidden;
-    height: 285px;
-    display: block;
-    align-items: center;
-    background-color: #fff;
-}
-
-.card_body::before {
+.card::before {
     content: "";
     display: block;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -204,70 +218,8 @@ display: inline-block;
     border: 10px solid #ffffff;
     background-color: #000000;
     opacity: 0;
-   
 }
 
-.card_body .card_control { 
-    top: 20px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    align-items: center;
-    opacity: 0;
-
- 
-}
-
-
-.card_control .card_basket {
-    width: 166px;
-    border: 1px solid #ffffff;
-    background-color: #323232;
-    height: 50px;
-    border-radius: 0;
-    color: #fff;
-    display: block;
-    text-transform: uppercase;
-    font: 400 14px/1 "Open Sans", sans-serif;
-  
-}
-
-.card_control .card_basket:hover {
-    background-color: #7fd9c8;
-}
-
-.card_control .card_basket i {
-    font-size: 27px;
-    margin-right: 10px;
-}
-
- .card_control_link a {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    border: 1px solid #ffffff;
-    color: #fff;
-    background-color: transparent;
-    margin: 0 4px;
-
-   
-}
-
-.card_control .card_control_link a:hover {
-    border-color: #1abc9c;
-    background-color: #1abc9c;
-}
-
-.card_body img {
-    height: 100%;
-    width: auto;
-}
-
-.card .card_value {
-    display: block;
-    font: 700 18px/1 "Roboto", sans-serif;
-}
 
 .card .card_name {
     width:200px;
@@ -290,6 +242,74 @@ display: inline-block;
     color: #fff;
     float: left;
 
+}
+.card:hover .card_name {
+    background-color: #1abc9c;
+}
+
+.card:hover .card_price {
+    background-color: #7fd9c8;
+}
+
+.icon {
+    display: inline-block;
+    width:50px;
+    height: 50px;
+    border: 1px solid #ffffff;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+.like{
+    background-image: url("https://image.flaticon.com/icons/svg/149/149217.svg");
+}
+.shuffle-arrows  {
+    background-image: url("https://image.flaticon.com/icons/svg/159/159781.svg");
+}
+.time{
+    background-image: url("https://image.flaticon.com/icons/svg/149/149316.svg");
+}
+.card_control .card_basket {
+    display: inline-block;
+    width: 160px;
+    border: 1px solid #ffffff;
+    background-color: #323232;
+    height: 50px;
+    color: #fff;
+    font: 400 14px/1 "Open Sans", sans-serif;
+    text-transform: uppercase;
+    
+}
+
+.icon-shopping-cart{
+    background-image: url("https://image.flaticon.com/icons/svg/617/617288.svg");
+}
+.icon-shopping-cart{
+    display: inline-block;
+    width:50px;
+    height:50px;
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+.icon:hover{
+    background-color: #7fd9c8;  
+}
+.card_control {
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50% );
+    display: none;
+}
+.card:hover .card_control {
+    display: block;
+}
+    
+.card_control .card_basket:hover {
+    background-color: #7fd9c8;
 }
 
 /*end card block*/
