@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    padding-bottom: 3px;
+    margin: auto;
+}
+
+.title_block {
+    color:#333333;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+
+.title_block span{
+        font-size: 24px;
+        font-family: 'Kaushan Script', cursive;
+        line-height: 1.2;
+      }
+ .title_block h3 {
+        font-size: 30px;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: bold;
+        line-height: 1.2;
+        position: relative;
+        
+ }
+        
+
+ .title_block h3::after {
+    content: "";
+    display: block;
+    border-bottom: 3px solid #f38181;
+    position: absolute;
+    width: 60px;
+    height: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 70px;
+}
+
+/*header*/
+
+.header_main {
+    width: 100%;
+}
+
+.header_main .wrapper {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    text-decoration: none;
+    font: 700 30px/1 "Montserrat",sans-serif;
+    color: #95e1d3;
+      
+}
+
+.logo:hover {
+    color: #1abc9c;
+}
+
+.menu {
+    margin-left: 34px;
+}
+
+.menu a {
+    color: #95e1d3;
+    font: 700 14px/1 "Open Sans", sans-serif;
+    margin-left: 35px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-bottom: 12px;
+}
+.menu a:hover {
+    color: #f38181;
+    border-bottom: 3px solid  #f38181;
+    height: 7px;
+}
+
+
+/*end header*/
+
+/*BEGEEN MAIN SERVICE LIST*/
+
+.service_list{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+}
+.service_block {
+display: flex;
+width: 375px;
+align-items: flex-start;
+margin-bottom: 100px;
+justify-content: space-between;
+}
+
+.service_text span {
+        font-size: 14px;
+        font-family:"Open Sans", sans-serif;
+        color: rgb(51, 51, 51);
+        line-height: 1.2;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+.service_text p {
+        font-size: 15px;
+        font-family: "Roboto" ,sans-serif;
+        color: rgb(153, 153, 153);
+        line-height: 1.6;
+        text-align: left;
+      }
+.service_text {
+    width: 325px;
+    display: flex;
+    flex-wrap: wrap;
+      }
+      
+/*END MAIN SERVICE LIST*/
+
+   /* BEGEEN MAIN CARDS TЕAM*/  
+   
+.tiitle_text{
+    display: block;
+    width: 950px;
+    text-align: center;
+    flex-wrap:wrap;
+    margin: 0 auto 30px;
+    font-size: 15px;
+    font-family: "Roboto";
+    color: rgb(153, 153, 153);
+    line-height: 1.6;
+       
+      
+}
+      .card_list {
+        display: flex;
+        justify-content:space-between;
+        flex-wrap: wrap;
+        margin-bottom: 85px;
+    }
+    .card:hover card_icons {
+        opacity: 1;
+        top: 0;
+        visibility: visible;
+    }
+    
+    .card {
+        width: 380px;
+    }
+    .card_body {
+        height: 450px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    
+    .card_body::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: linear-gradient( rgb(252,227,138) , rgb(243,129,129));
+        opacity: 0;
+        z-index: 1;
+    }
+    .card:hover .card_body::before {
+        opacity: 0.55;
+    }
+    .card:hover .card_body{
+        box-shadow: 10px 10px#95e1d3;
+    }
+    .card:hover .card_icons {
+        display: flex;
+    }
+    .card_icons {
+        display: none;
+        position: absolute;
+        z-index: 2;
+
+    }
+    .card_icon{
+        display: block;
+        width: 50px;
+        height: 50px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #fce38a;
+        margin-left: 2px;
+    }
+    .card_icon:hover{
+        background-color: #95e1d3;
+       
+    }
+
+    .facebook{
+        background-image: url("../img/facebook.png");
+    }
+    .twitter{
+        background-image: url("../img/twitter.png");
+    }
+    .pinterest{
+        background-image: url("../img/pinterest.png");
+    }
+    .instagram{
+        background-image: url("../img/instagram.png");
+    }
+    
+    .card_body img {
+        height: 450px;
+        width: 380px;
+        position: absolute;
+    }
+    
+    
+    .card .card_name {
+        text-transform: uppercase;
+        display:block;
+        font-size: 14px;
+        font-family: "Montserrat";
+        color: rgb(51, 51, 51);
+        text-transform: uppercase;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .card .card_position {
+        display:block;
+        font-size: 15px;
+        font-family: "Roboto";
+        color: rgb(153, 153, 153);
+        font-style: italic;
+        line-height: 1.6;
+        text-align: center;
+          }
+      
+/* END MAIN CARDS TЕAM*/  
+          
+/*footer*/
+
+.footer_main {
+    padding: 20px 0;
+}
+
+.footer_main .copyright {
+    font: 400 18px/1.4 "Open Sans", sans-serif;
+} 
+.footer_main .copyright a {
+    text-decoration: none;
+    color: #46bfa9;
+    transition: color .3s;
+}
+
+.footer_main .copyright a:hover {
+    color: #f38181;
+}
+
+
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+    
+form {
+    display: flex;
+  }
+  input {
+    width: 230px;
+    height: 42px;
+    padding-left: 10px;
+    border: 1px solid;
+    outline: none;
+    font-family: "Roboto";
+    font-style:italic ;
+    color: #cccccc; 
+    font: 15px;
+    line-height: 1.6;
+      
+  }
+  button {
+    display: block;
+    width: 150px;
+    height: 42px;
+    background-color:  #46bfa9;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: "Montserrat";
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2;
+    border: none;
+  }
+  .footer::before{
+    content: "";
+    display: block;
+    content: "";
+    display: block;
+    border-bottom: 1px solid #cccccc;
+    position: absolute;
+    width:100%;
+    bottom: 50px;
+  }
+ /*end footer*/
+
