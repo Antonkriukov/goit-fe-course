@@ -219,7 +219,7 @@ list-style: none;
  /*tablet begin*/
 
 }
-@media screen and (min-width: 768px) and (max-width: 1079px) {
+@media (min-width: 768px)  {
 
     .wrapper {
         max-width: 768px;
@@ -301,7 +301,6 @@ list-style: none;
 
  .wrapper--background-image{
     background-image: url("../img/Vector Smart Object1.jpg");
-    position: relative;
 
 }
 .conteyner{
