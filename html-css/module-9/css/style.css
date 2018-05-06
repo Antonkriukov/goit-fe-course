@@ -1,0 +1,291 @@
+.wrap-container{
+    margin: 0 auto;
+    width: 280px;
+    padding: 20px 0 20px 0;
+}
+.wrapper--background-image{
+    background-image: url("../img/Rectangle 1.jpg");
+    background-repeat: no-repeat;
+    height: 540px;
+    background-position: center;
+    min-width: 320px;
+}
+
+.no-gutter > [class*='col-'] {
+    padding-right:0;
+    padding-left:0;
+}
+
+
+/* begin header */
+
+.navigation{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content:flex-start ;
+    align-items: center;
+    margin-bottom: 37px;
+}
+
+.logo a {
+font-family: "Montserrat", sans-serif;
+font-weight: bold;
+text-transform: uppercase;
+line-height: 1.2;
+text-transform: uppercase;
+text-decoration: none;
+color: #fff;
+}
+
+
+
+.menu{
+    margin-bottom: 110px;
+}
+.submit{
+    margin: auto;
+    width: 94px;
+    height: 40px;
+    background-color: transparent  ;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.2;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+}
+.submit:hover {
+    border: 3px solid #fff;
+}
+
+/* end header */
+
+/* begin preview */
+
+.preview{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.title-preview{
+font-size: 30px;
+font-family: "Montserrat", sans-serif;
+color: rgb(255, 255, 255);
+font-weight: bold;
+text-transform: uppercase;
+line-height: 1.2;
+text-align: center;
+margin-bottom: 18px;
+z-index: 1;
+}
+.subtitle-preview{
+    display: block;
+    font:300 18px/1.2 "Roboto", sans-serif;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-bottom:18px;
+    z-index: 1;
+
+}
+
+.submit-preview{
+    display: block;
+    margin: auto;
+    width: 280px;
+    height: 40px;
+    background-color:  #ff4e50; 
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.2;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    z-index: 1;
+
+}
+
+/* end preview  */
+
+/* begin main */
+.title-partners{
+    font-size: 22px;
+    font-family: "Montserrat", sans-serif;
+    color: rgb(51, 51, 51);
+    font-weight: bold;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 30px;
+   }
+   .card-partner a {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: center;
+       flex-direction: column;
+       align-items: center;
+       margin-bottom:30px;
+       text-decoration: none;
+   }
+    .card-partner{
+    list-style: none;
+    }
+    .name-partner {
+        font-size: 14px;
+        font-family: "Montserrat", sans-serif;
+        color: rgb(51, 51, 51);
+        font-weight: bold;
+        line-height: 1.2;
+        text-align: center;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    
+    }
+    .text-partner{
+        font:200 14px/1.2 "Roboto", sans-serif;
+        text-align: center;
+        color: rgb(51, 51, 51);
+    
+    }
+    .partner-icons{
+        position: relative;
+    }
+    .partner-icon{
+        display:block;
+        width:37px;
+        height: 37px;
+        border: 4px solid #fff;
+        border-radius: 50%;
+        position: absolute;
+        background-size: 50%;
+        background-repeat: no-repeat;
+        background-position: center;
+        right:0;
+        bottom: 0;
+    }
+    .icon-tv{
+        background-image: url("../img/Shape 128.svg");
+        background-color: #ff4e50;
+    }
+    
+    .icon-lab{
+        background-image: url("../img/Shape 155.svg");
+        background-color: #ffa507;
+    }
+    .icon-cup{
+        background-image: url("../img/Shape 153.svg");
+        background-color: #1cd7ad;
+    }
+    .icon-telegram{
+        background-image: url("../img/Shape 170.svg");
+        background-color: #4e73db;
+    }
+    
+    .submit-partner{
+        display: block;
+        margin: auto;
+        width: 280px;
+        height: 40px;
+        background-color:transparent; 
+        color: #ff4e50;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1.2;
+        border: none;
+        border-radius: 20px;
+        outline: none; 
+        border: 2px solid #ff4e50 ;
+    }
+
+    @media (min-width: 768px)  {
+
+        .wrap-container {
+            width:492px;
+        
+        }
+        .wrapper--background-image{
+            background-image: url("../img/Vector Smart Object.jpg");
+            position: relative;
+            height: 700px;
+        }
+    
+        
+        .wrapper--background-image:before {
+            content: "";
+            opacity: 0.3;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: 0; 
+            background-color: #000;
+            
+          }
+          .navigation{
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              margin-bottom: 150px;
+          }
+          .menu{
+            margin-bottom:0px;
+        }
+        
+        .logo{
+        left:45px;
+        top:20px
+        }
+    
+        .preview{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .title-preview {
+            font-size: 52px;
+            margin-bottom: 30px;
+           
+            }
+        .subtitle-preview{
+                font:300 24px/1.2 "Roboto", sans-serif;
+                margin-bottom: 30px;
+               
+            }
+            
+    
+        .card-partner {
+            display: flex;
+            justify-content: center;
+        }
+     
+    
+    
+     /*tablet end*/
+    
+     /*begin desktop*/
+     @media  (min-width: 992px) {
+    
+    
+     .wrapper--background-image{
+        background-image: url("../img/Vector Smart Object1.jpg");
+    
+    }
+    .wrap-container{
+        width: 940px;
+    }
+}
+    }
+    
+    
+    
+    
+
+    
