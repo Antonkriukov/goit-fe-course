@@ -202,6 +202,8 @@ z-index: 1;
         border: 2px solid #ff4e50 ;
     }
 
+    /* begin tablet */
+
     @media (min-width: 768px)  {
 
         .wrap-container {
@@ -283,6 +285,7 @@ z-index: 1;
     }
 }
     }
+    /* destop end */
     
     
     
