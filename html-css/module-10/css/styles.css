@@ -1,0 +1,63 @@
+.masthead-wrapper{
+background: linear-gradient(   rgba(252,227,138,0.8) ,  rgba(243,129,129,0.8))  , url("../img/Layer15@1x.jpg");
+background-repeat: no-repeat;
+background-size: auto;
+background-position: center;
+height: 1000px;
+
+
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+    .masthead-wrapper {
+        background:linear-gradient(   rgba(252,227,138,0.5) ,  rgba(243,129,129,0.5)) , url("../img/Layer15@2x.jpg");
+        background-repeat: no-repeat;
+
+    }
+  }
+.banner__button {
+    width: 154px;
+    height: 34px;
+
+}
+.masthead__banner{
+    margin-bottom: 234px;
+}
+
+
+.masthead{
+    margin: 0 auto;
+}
+.masthead__header{
+    display: flex;
+    justify-content: space-between;
+
+}
+.header-nav__nav-list{
+    display: flex;
+    justify-content:space-between;
+   
+   
+}
+.nav-list__nav-item{
+   
+}
+.masthead-wrapper{
+   
+    margin: 0 auto;
+    
+}
+.nav-list__nav-item{
+    list-style: none;
+}
+
+
+
+
+
+
+
+
+
+
+
