@@ -126,8 +126,11 @@ height: 1000px;
     padding: 20px 0 0 0;
 }
 .icon{
-    fill: teal;
-    display: block;
+    fill: #fff;
+}
+
+.icon:hover{
+    fill: #fbdd89;
 }
 
 
