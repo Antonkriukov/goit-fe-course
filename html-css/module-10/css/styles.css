@@ -80,7 +80,7 @@ height: 1000px;
     text-decoration: none;
     padding-bottom: 12px;
 }
-.nav-item__link:hover {
+.nav-item__link a:hover {
     color: #fbdd89;
     border-bottom: 3px solid  #fbdd89;
     height: 7px;
