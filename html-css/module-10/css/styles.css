@@ -45,7 +45,7 @@ height: 1000px;
 
 .header__header-nav{
     display: flex;
-    align-items: center;
+    align-items:end;
 }
 .nav-list__nav-item{
    
@@ -133,6 +133,7 @@ height: 1000px;
 }
 .icon{
     fill: #fff;
+    background: center;
 }
 
 .icon:hover{
