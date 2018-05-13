@@ -171,6 +171,34 @@ height: 1000px;
 }
 
 
+.team__team-header{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+.team__team-header:after {
+    content: "";
+    display: block;
+    width: 60px;
+    border-bottom: 2px solid #f38181;
+    margin: 10px auto 0;
+}
+
+.team-header__discript-text{
+    display: block;
+    text-align: center;
+}
+
+.team-section{
+    display: flex;
+    justify-content: center;
+}
+.team-wrapper{
+   
+}
+
+
 
 
 
