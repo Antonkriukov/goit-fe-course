@@ -149,26 +149,28 @@ height: 1000px;
 
 .service__service-list {
     display: flex;
-    flex-wrap: wrap;
-
-    
-   
-}
-
-.services-item__servises-card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
+    flex-wrap: wrap;  
 }
 
 .services-card__discript-text{
-    text-align:center ;
+    margin-top: 0;
+   
+}
+.services-card__title{
+    margin-top: 0;
 }
 
 .service-list__service-item{
-    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    
 }
+.services-item__servises-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 
 
 
