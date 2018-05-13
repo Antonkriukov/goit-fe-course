@@ -145,6 +145,9 @@ height: 1000px;
     align-items: center;
    
 }
+.services-card__icon{
+    fill:#95e1d3 ;
+}
 
 .service__service-list {
     display: flex;
