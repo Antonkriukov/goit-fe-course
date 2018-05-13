@@ -1,9 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
 .masthead-wrapper{
 background: linear-gradient(   rgba(243,129,129,0.8) , rgba(252,227,138,0.8))  , url("../img/Layer15@1x-min.jpg");
 background-repeat: no-repeat;
 background-size: auto;
 background-position: center;
-height: 1000px;
 
 
 }
@@ -18,7 +25,12 @@ height: 1000px;
 .banner__button {
     width: 154px;
     height: 34px;
+    margin-bottom: 140px;
 
+}
+
+.service-wrapper{
+    padding: 20px 0 20px 0;
 }
 .masthead__banner{
     margin-bottom: 234px;
@@ -143,11 +155,36 @@ height: 1000px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom:64px;
    
 }
 .services-card__icon{
     fill:#95e1d3 ;
 }
+.services-header__title{
+    font-size: 24px;
+    line-height: 1.2;
+    color: rgb(51, 51, 51);
+    font-family: "KaushanScript",cursive;
+    margin-bottom: 20px;
+}
+
+.services-header__discript-title{
+    font-size: 30px;
+    font-family: "Montserrat", sans-serif;
+    color: rgb(51, 51, 51);
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2; 
+}
+.services__services-header:after {
+    content: "";
+    display: block;
+    width: 60px;
+    border-bottom: 2px solid #f38181;
+    margin: 20px auto 0;
+}
+
 
 .service__service-list {
     display: flex;
@@ -197,9 +234,72 @@ height: 1000px;
     display: flex;
     justify-content: center;
 }
-.team-wrapper{
-   
+.our-team-item__our-team-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.footer_main .copyright {
+    font: 400 18px/1.4 "Open Sans", sans-serif;
+} 
+.footer_main .copyright a {
+    text-decoration: none;
+    color: #46bfa9;
+}
+
+.footer_main .copyright a:hover {
+    color: #f38181;
+}
+
+
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+    
+form {
+    display: flex;
+  }
+  input {
+    width: 230px;
+    height: 42px;
+    padding-left: 10px;
+    border: 1px solid;
+    outline: none;
+    font-family: "Roboto";
+    font-style:italic ;
+    color: #cccccc; 
+    font: 15px;
+    line-height: 1.6;
+      
+  }
+  button {
+    display: block;
+    width: 150px;
+    height: 42px;
+    background-color:  #46bfa9;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: "Montserrat";
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.2;
+    border: none;
+  }
+  .footer::before{
+    content: "";
+    display: block;
+    content: "";
+    display: block;
+    border-bottom: 1px solid #cccccc;
+    position: absolute;
+    width:100%;
+    bottom: 50px;
+  }
 
 
 
