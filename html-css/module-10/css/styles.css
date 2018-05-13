@@ -31,12 +31,13 @@ height: 1000px;
 .masthead__header{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 126px;
+    margin-bottom: 126px; 
 
 }
 .header-nav__nav-list{
     display: flex;
     justify-content:space-between;
+    align-items: center;
 
    
    
@@ -80,10 +81,9 @@ height: 1000px;
     text-decoration: none;
     padding-bottom: 12px;
 }
-.nav-item__link a:hover {
+.nav-item__link:hover {
     color: #fbdd89;
-    border-bottom: 3px solid  #fbdd89;
-    height: 7px;
+    
 }
 
 .masthead__banner{
