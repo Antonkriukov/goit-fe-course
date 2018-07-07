@@ -22,3 +22,6 @@ if (ADMIN_PASSWORD =='m4ngo1zh4ackz0r') {
     alert ('Доступ запрещен!');
 }
 
+
+ 
+
