@@ -27,7 +27,7 @@ const addLogin = function(logins, login) {
     console.log('login length:', login.length);
     console.log('Length Validity (4-16):', checkLoginValidityResult);
 
-    if (!checkLoginValidityResult) {
+    if (!checkLoginValidityResult ) {
         return console.log('Ошибка! Логин должен быть от 4 до 16 символов');
     
     }
