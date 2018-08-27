@@ -10,7 +10,7 @@ if (adminLogin === 'admin') {
 
   if (adminPassword === 'm4ngo1zh4ackz0r') {
     alert('Добро пожаловать!');
-  } else if (adminLogin === null) {
+  } else if (adminPassword === null) {
     alert(canceled);
   } else {
     alert(closed);
