@@ -1,27 +1,22 @@
-'use strict'
+'use strict';
 
 //1 задание
-const ADMIN_LOGIN = prompt('Admin Login');
+const adminLogin = prompt('Admin Login');
+const canceled = 'Отменено пользователем!';
+const closed = `Доступ запрещен!`;
 
-if (ADMIN_LOGIN === 'admin') {
-    
-const ADMIN_PASSWORD = prompt( 'Admin Password');
+if (adminLogin === 'admin') {
+  const adminPassword = prompt('Admin Password');
 
-if (ADMIN_PASSWORD ==='m4ngo1zh4ackz0r') {
-  alert ('Добро пожаловать!');
-
-} else if ( ADMIN_PASSWORD === null) {
-  alert('Отменено пользователем!');  
+  if (adminPassword === 'm4ngo1zh4ackz0r') {
+    alert('Добро пожаловать!');
+  } else if (adminLogin === null) {
+    alert(canceled);
+  } else {
+    alert(closed);
+  }
+} else if (adminLogin === null) {
+  alert(canceled);
 } else {
-  alert('Доступ запрещен!');
-}
-
-} else if ( ADMIN_LOGIN === null) {
-    alert('Отменено пользователем!');
-} else {
-    alert ('Доступ запрещен!');
-}
-
-
- 
-
+  alert(closed);
+};
