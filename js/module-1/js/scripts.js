@@ -3,13 +3,15 @@
 //1 задание
 const adminLogin = prompt('Admin Login');
 const canceled = 'Отменено пользователем!';
-const closed = `Доступ запрещен!`;
+const closed = 'Доступ запрещен!';
 
 if (adminLogin === 'admin') {
   const adminPassword = prompt('Admin Password');
+  const password = 'm4ngo1zh4ackz0r';
+  const welcome = 'Добро пожаловать!';
 
-  if (adminPassword === 'm4ngo1zh4ackz0r') {
-    alert('Добро пожаловать!');
+  if (adminPassword === password) {
+    alert(welcome);
   } else if (adminPassword === null) {
     alert(canceled);
   } else {
@@ -19,4 +21,4 @@ if (adminLogin === 'admin') {
   alert(canceled);
 } else {
   alert(closed);
-};
+}
