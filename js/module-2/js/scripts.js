@@ -5,7 +5,7 @@ let userInput;
 //Число введенное пользователем записывается в массив чисел
 do {
   userInput = Number(prompt('Введите число'));
-  numbers.push(parseFloat(userInput));
+  numbers.push(userInput);
 } while (userInput !== 0);
 // сложить общую сумму всех элементов массива
 for (let value of numbers) {
