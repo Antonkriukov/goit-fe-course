@@ -5,12 +5,12 @@ let userInput;
 //Число введенное пользователем записывается в массив чисел
 do {
   userInput = Number(prompt('Введите число'));
-  if (isNaN(userInput)) break;
+  if (isNaN(userInput) || userInput === 0) break;
   numbers.push(userInput);
 } while (userInput !== 0);
 
 // По окончанию ввода, если массив не пустой, вывести alert с текстом `Общая сумма чисел равна ${сумма}
-if (numbers.length > 1){
+if (numbers.length){
   // сложить общую сумму всех элементов массива
   for (let value of numbers) 
     total += value;
