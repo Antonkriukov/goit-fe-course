@@ -14,6 +14,4 @@ if (numbers.length){
   // сложить общую сумму всех элементов массива
   for (let value of numbers) 
     total += value;
-
-    alert(`Общая сумма чисел равна ${total}`);
-}
+} alert(`Общая сумма чисел равна ${total}`);
