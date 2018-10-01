@@ -36,15 +36,19 @@ const resultLoginUnique = isLoginUnique(logins, login);
        логин в массив и возвращает строку 'Такой логин уже используется!'*/
 
 const addLogins = function(logins, login) {
-  if (resultLoginUnique && resultLoginValid) {
-    alert(existLogin);
-  } else if (!resultLoginValid) {
-    alert(errorLogin);
-  } else {
+  if (resultLoginUnique ) {
+    alert(existLogin)
+    return;
+  } 
+  if (!resultLoginValid) {
+    alert(errorLogin)
+    return;
+  }   
     logins.push(login);
     alert(addedLogin);
-  }
+  
 };
 
-const addloginsResults = addLogins(logins ,login);
+addLogins(logins ,login);
+console.log(logins);
 
