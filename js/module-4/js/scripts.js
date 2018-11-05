@@ -34,7 +34,7 @@ function Cashier(name, productsDatabase) {
   this.getCustomerMoney = value => this.customerMoney = value;
   
 
-  this.countChange = (totalPrice) => {
+  this.countChange = totalPrice => {
     return this.customerMoney >= totalPrice ? this.customerMoney - totalPrice : null;
 };
     
@@ -45,7 +45,7 @@ this.onError = () =>
     console.log('Очень жаль, вам не хватает денег на покупки');
 
 
-  this.onSuccess = (change) => {
+  this.onSuccess = change => {
     if (change === 0) {
       console.log(`Спасибо за покупку`);
     }
