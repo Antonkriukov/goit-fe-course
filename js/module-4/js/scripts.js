@@ -34,7 +34,14 @@ function Cashier(name, productsDatabase) {
   this.getCustomerMoney = value => this.customerMoney = value;
   
 
-  this.countChange = totalprice => this.customerMoney-totalprice;
+  this.countChange = function() {
+    this.changeAmount = this.customerMoney - this.totalOrderSum;
+    if (this.changeAmount < 0) {
+      return null;
+    } else {
+      return this.changeAmount;
+    }
+  }
     
    
   
@@ -73,7 +80,7 @@ console.log(mango.customerMoney);
 // Вызываем countChange для подсчета сдачи
 const change = mango.countChange();
 console.log (typeof(change));
-mango.countChange(total)
+
 
 
 // // Проверяем результат подсчета денег
