@@ -34,63 +34,62 @@ function Cashier(name, productsDatabase) {
   this.getCustomerMoney = value => this.customerMoney = value;
   
 
-  this.countChange = function() {
-    this.changeAmount = this.customerMoney - this.totalOrderSum;
-    if (this.changeAmount < 0) {
-      return null;
-    } else {
-      return this.changeAmount;
-    }
-  }
+  this.countChange = (totalPrice) => {
+    return this.customerMoney >= totalPrice ? this.customerMoney - totalPrice : null;
+};
     
    
   
 
-  this.onError = () =>
+this.onError = () =>
     console.log('Очень жаль, вам не хватает денег на покупки');
 
-  this.onSuccess = () => {
-    if (this.changeAmount === 0) {
+
+  this.onSuccess = (change) => {
+    if (change === 0) {
       console.log(`Спасибо за покупку`);
     }
 
-    if (this.changeAmount > 0) {
-      console.log('Спасибо за покупку, ваша сдача :', this.changeAmount);
+    if (change > 0) {
+      console.log('Спасибо за покупку, ваша сдача :', change);
     }
   };
 
-  this.reset = () => (this.customerMoney = 0);
+  this.reset = () => (this.customerMoney = 0);;
 }
 
 const mango = new Cashier('Mango', products);
 
 // Вызываем метод countTotalPrice для подсчета общей суммы
 // передавая order - список покупок пользователя
- const total = mango.countTotalPrice(order);
- console.log(typeof(total))
+ const totalPrice = mango.countTotalPrice(order);
+//  console.log(totalPrice)
 
 
 
 // Вызываем getCustomerMoney для запроса денег покупателя
 
-mango.getCustomerMoney(670);
+mango.getCustomerMoney(80);
 
-console.log(mango.customerMoney);
+console.log(`Внесено денег: ${mango.customerMoney}`);
 
 // Вызываем countChange для подсчета сдачи
-const change = mango.countChange();
-console.log (typeof(change));
+const change = mango.countChange(totalPrice);
+// console.log (change);
 
 
 
-// // Проверяем результат подсчета денег
-// if (change !== null) {
-//   // При успешном обслуживании вызываем метод onSuccess
-//   mango.onSuccess(); // Спасибо за покупку, ваша сдача 190
-// } else {
-//   // При неудачном обслуживании вызываем метод onError
-//   mango.onError(); // Очень жаль, вам не хватает денег на покупки
-// }
+// Проверяем результат подсчета денег
+if(change !== null) {
+  // При успешном обслуживании вызываем метод onSuccess
+ mango.onSuccess(change); // Спасибо за покупку, ваша сдача 190
+} else {
+ // При неудачном обслуживании вызываем метод onError   
+ mango.onError(change); // Очень жаль, вам не хватает денег на покупки
+}
 
-// // Вызываем reset при любом исходе обслуживания
-// mango.reset();
+// Вызываем reset при любом исходе обслуживания
+mango.reset(change);
+
+// Проверяем значения после reset
+console.log(mango.customerMoney); // 0
