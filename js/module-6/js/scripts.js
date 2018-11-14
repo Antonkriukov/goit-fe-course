@@ -8,12 +8,12 @@ class Hamburger {
   }
   addTopping(topping) {
     if (!this._toppings.includes(topping)) {
-      return this._toppings.push(topping);
+      this._toppings.push(topping);
     }
   }
 
   removeTopping(topping) {
-    return (this._toppings = this._toppings.filter(x => x !== topping));
+    this._toppings = this._toppings.filter(x => x !== topping);
   }
 
   get getToppings() {
@@ -28,27 +28,21 @@ class Hamburger {
     return this._stuffing;
   }
 
-  get calculatePrice() {
-    const priceArr = this._toppings.map(x => Hamburger.TOPPINGS[x].price);
-    priceArr.push(
-      Hamburger.SIZES[this._size].price,
-      Hamburger.STUFFINGS[this._stuffing].price,
-    );
-    let price = priceArr.reduce((acc, prices) => acc + prices, 0);
-    return price;
-  }
+    _calculate(key) {
+    const topping = this._toppings.reduce((acc, value) => {
+      return acc + Hamburger.TOPPINGS[value][key];
+    }, 0);
 
+    return Hamburger.SIZES[this._size][key] +
+      Hamburger.STUFFINGS[this._stuffing][key] +
+      topping
+    
+  }
+  get calculatePrice() {
+    return this._calculate('price');
+  }
   get calculateCalories() {
-    const caloriesArr = this._toppings.map(x => Hamburger.TOPPINGS[x].calories);
-    caloriesArr.push(
-      Hamburger.SIZES[this._size].calories,
-      Hamburger.STUFFINGS[this._stuffing].calories,
-    );
-    let calories = caloriesArr.reduce(
-      (acc, itemcalories) => acc + itemcalories,
-      0,
-    );
-    return calories;
+    return this._calculate('calories');
   }
 }
 
@@ -99,11 +93,7 @@ Hamburger.TOPPINGS = {
   },
 };
 
-// Маленький гамбургер с начинкой из сыра
-const hamburger = new Hamburger(
-  Hamburger.SIZE_LARGE,
-  Hamburger.STUFFING_MEAT,
-);
+const hamburger = new Hamburger(Hamburger.SIZE_LARGE, Hamburger.STUFFING_MEAT);
 
 // Добавка из приправы
 hamburger.addTopping(Hamburger.TOPPING_SPICE);
