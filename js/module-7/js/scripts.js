@@ -30,7 +30,7 @@ const elements = createCards(posts);
 body.append(...elements);
 
 function createCards(arr) {
-  return arr.reduce((acc, el) => acc.concat(createPostCard(el)), []);
+  return arr.map(item =>createPostCard(item));
 }
 
 function createPostCard({ img, title, text, link }) {
