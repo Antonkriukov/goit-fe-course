@@ -24,7 +24,7 @@ const posts = [
   },
 ];
 
-const body = document.querySelector('body');
+const body = document.body;
 const elements = createCards(posts);
 
 body.append(...elements);
