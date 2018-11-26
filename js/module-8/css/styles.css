@@ -1,0 +1,49 @@
+/*common*/
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.image-gallery {
+  display: flex;
+  flex-direction: column;
+  width: 992px;
+  padding: 0 5px;
+  margin: 10px auto;
+  border-radius: 2px;
+  }
+
+  .fullview-item {
+  overflow: hidden;
+ 
+   
+  }
+
+  .slider {
+    margin-top: 8px;
+  
+  }
+
+  .preview-items {
+
+    display: flex;
+    justify-content:center;
+    list-style: none;
+    align-items: center;
+    
+}
+
+.preview-img {
+  border: 10px solid #fff;
+ 
+  }
+  
+  .preview-img-active {
+    border: 10px solid rgba(22, 22, 34, 0.721);
+}
+  
+
+
