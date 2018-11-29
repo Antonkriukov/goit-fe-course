@@ -10,71 +10,67 @@ const galleryItems = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
-  const imageGallery = document.querySelector('.js-image-gallery');
-
-  const fullviewImage = showFullviewImage(galleryItems[0]);
-  const previewImages = showPreviewImages(galleryItems);
-
-  imageGallery.innerHTML = fullviewImage;
-  imageGallery.innerHTML += previewImages;
-
-  const previewImgs = imageGallery.querySelectorAll('.preview-img');
-
-  const previewActiveImg = previewImgs[0].classList.add('preview-img-active');
-  
-
-
-  imageGallery.addEventListener('click', onImageGalleryClick);
-
-  function onImageGalleryClick({ target }) {
-    const hasClass = target.classList.contains('preview-img');
-
-    if (!hasClass) return;
-
-    const activeFullviewImage = imageGallery.querySelector('.fullview-img');
-
-    activeFullviewImage.setAttribute('src', target.dataset.fullview);
-
-    setActivePreviewImg(previewImgs, target);
-  }
-
-  function setActivePreviewImg(previewImgs, target) {
-    previewImgs.forEach(previewActiveImg => {
-      if (previewActiveImg!== target) {
-        previewActiveImg.classList.remove('preview-img-active');
-      } else {
-        previewActiveImg.classList.add('preview-img-active');
-      }
-    })
-    return previewActiveImg;
-  }
-
-  function showFullviewImage({ fullview }) {
-    const fullviewGalleryItem = `                                                                                                                                                                       
-      <div class="fullview-item">
-        <img class="fullview-img" src="${fullview}" alt="outdoors">
-      </div> 
-    `;
-
-    return fullviewGalleryItem;
-  }
-
-  function showPreviewImages() {
-    const previewGalleryItems = `
-  <div class="slider"><ul class="preview-items">
-    ${galleryItems.reduce(
-      (acc, { preview, fullview, alt }) =>
-        acc +
-        `
-      <li class="preview-item"><img class="preview-img" 
-                                    src="${preview}"
-                                    data-fullview="${fullview}"
-                                    alt="${alt}">
-      </li>`,
-      '',
-    )} 
-  </ul></div>`;
-
-    return previewGalleryItems;
-  }
+  const imgPreviewArr = document.querySelectorAll('img');
+  imgPreviewArr[1].classList.add('focused');
+  imgFullview.setAttribute('src', galleryItems[0].fullview);
 });
+
+const imageGallery = document.querySelector('.js-image-gallery');
+
+const container = document.createElement('div');
+const fullView = document.createElement('div');
+const imgFullview = document.createElement('img');
+const preView = document.createElement('ul');
+
+fullView.classList.add('fullview');
+preView.classList.add('preview');
+
+const result = createCards (galleryItems);
+imageGallery.append(...result); 
+
+function createCards (galleryItems) {
+  return galleryItems.map(item => createPostCard(item));
+};
+
+
+function createPostCard ({preview, fullview, alt}) {  
+
+  const previewItem = document.createElement('li');
+  const imgPreview = document.createElement('img');
+
+
+  imgFullview.setAttribute('alt', alt);
+  imgPreview.setAttribute('src', preview);
+  imgPreview.setAttribute('alt', alt);
+  imgPreview.setAttribute('data-fullview', fullview);
+
+  fullView.appendChild(imgFullview);
+  preView.append(previewItem);
+  previewItem.appendChild(imgPreview);
+
+  container.append(fullView, preView);
+
+  return container;
+}
+
+preView.addEventListener('click', getImg);
+function getImg (event) {
+  const target = event.target;
+  const name = target.nodeName
+  if (name !== 'IMG') {
+  return;
+}
+  getThatImg(target);
+}
+
+function getThatImg (pointedImg) {
+  const source = pointedImg.getAttribute('data-fullview');
+  const previousImg = preView.querySelector('li img.focused');
+
+  if (previousImg) {
+      previousImg.classList.remove('focused');
+  }
+
+  pointedImg.classList.add('focused');
+  imgFullview.setAttribute('src', source);
+}
