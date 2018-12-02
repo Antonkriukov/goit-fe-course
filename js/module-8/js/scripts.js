@@ -32,7 +32,6 @@ const galleryItems = [
     alt: 'alt text 6',
   },
 ];
-
 document.addEventListener('DOMContentLoaded', () => {
   const imgPreviewArr = document.querySelectorAll('img');
   imgPreviewArr[1].classList.add('focused');
@@ -40,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const imageGallery = document.querySelector('.js-image-gallery');
 
-// create fullview div
+
 const fullviewDiv = document.createElement('div');
 fullviewDiv.classList.add('fullview');
 
@@ -88,7 +87,7 @@ function createFullView({fullview, alt}) {
 }
 
 
-previewDiv.addEventListener('click', getImg);
+previewDiv.addEventListener('click', getThatImg);
 
 function getImg(event) {
   const target = event.target;
@@ -99,14 +98,13 @@ function getImg(event) {
   getThatImg(target);
 }
 
-function getThatImg(pointedImg) {
-  const source = pointedImg.getAttribute('data-fullview');
-  const previousImg = previewDiv.querySelector('li img.focused');
-
-  if (previousImg) {
-      previousImg.classList.remove('focused');
-  }
-
-  pointedImg.classList.add('focused');
-  fullviewDiv.children[0].setAttribute('src', source);
+function getThatImg() {
+  const images = previewDiv.querySelector('li img');
+  images.forEach((image) => {
+    (image!== target)
+      ? image.classList.remove('focused')
+      : image.classList.add('focused');
+  });
 }
+
+console.log(previewDiv)
