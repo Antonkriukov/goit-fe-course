@@ -101,6 +101,6 @@ function getThatImg(event) {
           : image.classList.add('focused');
   });
 
-  getThatImg(target);
+ 
 }
 
