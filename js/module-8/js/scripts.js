@@ -88,19 +88,23 @@ function createFullView({fullview, alt}) {
 
 
 previewDiv.addEventListener('click',  getThatImg);
-const images = previewDiv.querySelectorAll('img');
+
 
 
 
 function getThatImg(event) {
   const target = event.target;
-  const images = previewDiv.querySelectorAll('li img');
+    const images = previewDiv.querySelectorAll('li img');
+
+    const fullViewSrc = document.querySelector('.fullview img');
+
+    fullViewSrc.setAttribute('src', target.dataset.fullview);
+    fullViewSrc.setAttribute('alt', target.alt);
   images.forEach((image) => {
       (image!== target)
           ? image.classList.remove('focused')
           : image.classList.add('focused');
   });
 
- 
 }
 
