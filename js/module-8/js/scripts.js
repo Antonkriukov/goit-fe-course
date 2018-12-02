@@ -87,24 +87,20 @@ function createFullView({fullview, alt}) {
 }
 
 
-previewDiv.addEventListener('click', getThatImg);
+previewDiv.addEventListener('click',  getThatImg);
+const images = previewDiv.querySelectorAll('img');
 
-function getImg(event) {
+
+
+function getThatImg(event) {
   const target = event.target;
-  const name = target.nodeName
-  if (name !== 'IMG') {
-      return;
-  }
+  const images = previewDiv.querySelectorAll('li img');
+  images.forEach((image) => {
+      (image!== target)
+          ? image.classList.remove('focused')
+          : image.classList.add('focused');
+  });
+
   getThatImg(target);
 }
 
-function getThatImg() {
-  const images = previewDiv.querySelector('li img');
-  images.forEach((image) => {
-    (image!== target)
-      ? image.classList.remove('focused')
-      : image.classList.add('focused');
-  });
-}
-
-console.log(previewDiv)
