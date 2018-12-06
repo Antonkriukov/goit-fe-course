@@ -1,0 +1,53 @@
+/*common*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.stopwatch {
+  display: block;
+  padding: 30px;
+  text-align: center;
+  color: #b4a8a8;
+  border-radius: 2px;
+  background-color:#212121;
+}
+
+.time {
+  margin-bottom: 15px;
+  font-size: 80px;
+  border: 2px solid #696363;
+  display: block;
+}
+
+.btn {
+  width: 200px;
+  display: inline;
+  margin: 20px;
+  text-transform: uppercase;
+  border: 2px solid #ffff;
+  background-color: #212121;
+  color: #ffffff;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 28px;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  
+}
+
+.btn:hover{
+  background-color: #3f0000;
+  box-shadow: 10px 10px 10px 0   rgba(180, 174, 174, 0.83);
+  transform: scale(1.2);
+}
+
+.js-laps {
+  font-family: "Roboto Mono", monospace;
+  font-size: 40px;
+  margin-top: 20px;
+  text-align: center;
+}
