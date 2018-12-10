@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+      <section class="section">
+          <div class="container getAll">
+              <form class="getAll-form">
+                  <button class="mdc-btn js-getAll" type="submit">getAll</button>
+              </form>
+              <p class="result js-resGetAll"></p>
+          </div>
+          <div class="container getUserById">
+              <form class="getUserById-form">
+                  <input class="userIdInput" type="text" name="userId" placeholder="Enter user id">
+                  <button class="mdc-btn js-getUserById" type="submit">get</button>
+              </form>
+              <p class="result js-resGetUserById"></p>
+          </div>
+          <div class="container addUser">
+              <form class="addUser-form">
+                  <input class="addUserName" type="text" name="userName" placeholder="Enter user name">
+                  <input class="addUserAge" type="text" name="userAge" placeholder="Enter user age">
+                  <button class="mdc-btn js-addUser" type="submit">add</button>
+              </form>
+          </div>
+          <div class="container removeUser">
+              <form class="removeUser-form">
+                  <input class="removeById" type="text" name="userId" placeholder="Enter user id">
+                  <button class="mdc-btn js-removeUser" type="submit">remove</button>
+              </form>
+          </div>
+          <div class="container updateUser">
+              <form class="updateUser-form">
+                  <input class="updateById" type="text" name="userId" placeholder="Enter user id">
+                  <input class="updateUserName" type="text" name="userName" placeholder="Enter new user name">
+                  <input class="updateUserAge" type="text" name="userAge" placeholder="Enter new user age">
+                  <button class="mdc-btn js-updateUser" type="submit">update</button>
+              </form>
+          </div>
+      </section>
+   
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

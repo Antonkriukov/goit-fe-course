@@ -1,0 +1,83 @@
+/*common*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    padding: 10px;
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container {
+    margin: 20px;
+    padding: 10px;
+    width: 350px;
+    min-height: 160px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #a4afaa5e;
+}
+
+.result {
+    border: solid 1px;
+}
+
+.getAll {
+    height: 160px;
+    overflow: auto;
+}
+
+.getAll,
+.getUserById {
+    flex-basis: 380px;
+    padding-top: 20px;
+}
+
+.addUser,
+.removeUser,
+.updateUser {
+    flex-basis: 380px;
+    padding-top: 20px;
+}
+
+.input {
+    margin: 5px 0;
+}
+
+.updateById,
+.updateUserName,
+.updateUserAge,
+.removeById,
+.userIdInput,
+.addUserName,
+.addUserAge {
+    margin: 0 0px 5px 0px;
+    border-radius: 2px;
+    background-color: #dba8a8;
+}
+
+.mdc-btn {
+    margin: 5px 0 5px;
+    width: 80px;
+    display: block;
+    text-transform: uppercase;
+    border: 0;
+    background-color: #212121;
+    color: #ffffff;
+    padding: 6px 6px;
+    cursor: pointer;
+    font-size: 8px;
+    border-radius: 8px;
+    font-family: "Roboto", sans-serif;
+}
+
+.mdc-btn:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(1.1);
+}
