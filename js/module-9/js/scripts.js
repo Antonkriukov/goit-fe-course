@@ -14,11 +14,8 @@ const Stopwatch = {
   isActive : false,
   
   startTimer() {
-      if(this.isActive) return;
-
       this.isActive = true;
       this.startTime = Date.now() - this.delta;
-      this.delta;
       this.id = setInterval(() => {
           const currentTime = Date.now();
           this.delta = currentTime - this.startTime;
@@ -85,7 +82,7 @@ function lapsReset () {
 }
 
 function clickButton () {
-  if(Stopwatch.isActive === false) {
+  if(!Stopwatch.isActive) {
     Stopwatch.startTimer();
       startBtn.textContent = 'Pause';
   } else {
