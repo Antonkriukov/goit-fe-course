@@ -1,139 +1,228 @@
 'use strict';
-const inputId = document.querySelector('.userIdInput');
-const addUserName = document.querySelector('.addUserName');
-const addUserAge = document.querySelector('.addUserAge');
-const removeById = document.querySelector('.removeById');
-const updateById = document.querySelector('.updateById');
-const updateUserName = document.querySelector('.updateUserName');
-const updateUserAge = document.querySelector('.updateUserAge');
 
-const getAllBtn = document.querySelector('.js-getAll');
-const getUserByIdBtn = document.querySelector('.js-getUserById');
-const addUserBtn = document.querySelector('.js-addUser');
-const removeUserBtn = document.querySelector('.js-removeUser');
-const updateUserBtn = document.querySelector('.js-updateUser');
+const allUsers = document.querySelector('.all-users');
+const tBody = document.querySelector('.response');
 
-const resultAll = document.querySelector('.js-resGetAll');
-const resultGetUserById = document.querySelector('.js-resGetUserById');
+const getUserForm = document.querySelector('.id-user-form');
+const getUserInput = document.querySelector('.id-user-input');
 
-const apiUrl = 'https://test-users-api.herokuapp.com/users/';
+const getAddFrom = document.querySelector('.add-user-form');
+const getUserName = document.querySelector('.add-user-name');
+const getUserAge = document.querySelector('.add-user-age');
 
-getAllBtn.addEventListener('click', evt => {
-  evt.preventDefault();
-  getAllUsers();
-});
-getUserByIdBtn.addEventListener('click', evt => {
-  evt.preventDefault();
-  const id = inputId.value;
-  getUserById(id);
-});
-addUserBtn.addEventListener('click', evt => {
-  evt.preventDefault();
-  const name = addUserName.value;
-  const age = Number(addUserAge.value);
-  addUser(name, age);
-});
-removeUserBtn.addEventListener('click', evt => {
-  evt.preventDefault();
-  const id = removeById.value;
-  removeUser(id);
-});
-updateUserBtn.addEventListener('click', evt => {
-  evt.preventDefault();
-  const id = updateById.value;
-  const newName = updateUserName.value;
-  const newAge = Number(updateUserAge.value);
-  const user = {
-    name: newName,
-    age: newAge,
-  };
-  updateUser(id, user);
-});
+const getRemoveForm = document.querySelector('.remove-user-form');
+const getUserRemoveId = document.querySelector('.remove-user-input');
 
-function getAllUsers() {
-  return fetch(apiUrl)
-    .then(response => {
-      if (response.ok) {
-        alert(`Success: ${response.status}`);
-        return response.json();
-      }
-      throw new Error('Error' + response.statusText);
-    })
-    .then(data => {
-      data.data.reduce((acc, item) => {
-        acc = ` ${item.id}|${item.name}|${item.age} `;
-        resultAll.textContent = resultAll.textContent + acc;
-      }, '');
-    })
-    .catch(err => console.log(err));
+const getUpdateForm = document.querySelector('.update-user-form');
+const getUserUpdateId = document.querySelector('.update-user-id');
+const getUserUpdateName = document.querySelector('.update-user-name');
+const getUserUpdateAge = document.querySelector('.update-user-age');
+
+//#region html creating 
+function userTable(userData) {
+    
+    const usersTable = document.createElement('table');
+    const tableHeader = document.createElement('tr');
+    const headerId = document.createElement('th');
+    headerId.textContent = 'ID';
+    const headerName = document.createElement('th');
+    headerName.textContent = 'NAME';
+    const headerAge = document.createElement('th');
+    headerAge.textContent = 'AGE';
+    usersTable.appendChild(tableHeader);
+    tableHeader.appendChild(headerId);
+    tableHeader.appendChild(headerName);
+    tableHeader.appendChild(headerAge);
+
+    if (!Array.isArray(userData)) {
+        const row = document.createElement('tr');
+        usersTable.appendChild(row);
+        for (let key in userData) {
+            let col = document.createElement('td');
+            col.textContent = userData[key];
+            row.appendChild(col);
+        }
+    } else if (Array.isArray(userData)) {
+        userData.forEach(function (item) {
+            const row = document.createElement('tr');
+            usersTable.appendChild(row);
+            for (let key in item) {
+                let col = document.createElement('td');
+                col.textContent = item[key];
+                row.appendChild(col);
+            }
+        })
+    }
+    tBody.appendChild(usersTable);
 }
 
-function getUserById(id) {
-  return fetch(apiUrl)
-    .then(response => {
-      if (response.ok) {
-        alert(`Success: ${response.status}`);
-        return response.json();
-      }
-      throw new Error('Error' + response.statusText);
-    })
-    .then(data => {
-      const find = data.data.find(item => item.id === id);
-      if (!find) {
-        resultGetUserById.textContent = 'Такого пользователя в списке нет!';
-      } else {
-        resultGetUserById.textContent = `${find.id}|${find.name}|${find.age}`;
-      }
-    })
-    .catch(err => console.log(err));
+function statusMessage(str) {
+    const message = document.createElement('p');
+    message.textContent = str;
+    tBody.appendChild(message);
 }
-function addUser(name, age) {
-  return fetch(apiUrl, {
-    method: 'POST',
-    body: JSON.stringify({ name: name, age: age }),
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
-  })
-    .then(response => {
-      if (response.ok) {
-        alert(`Success: ${response.status}`);
-        return response.json();
-      }
-      throw new Error('Error' + response.statusText);
-    })
-    .catch(err => console.log(err));
+
+function clearResultContainer() {
+    if (tBody.childNodes.length > 0) {
+        while (tBody.firstChild) {
+            tBody.removeChild(tBody.firstChild);
+        }
+    }
 }
+
+function getAllUsers (){
+   return fetch('https://test-users-api.herokuapp.com/users')
+        .then(response => {
+            if (response.ok) return response.json();
+            throw new Error(`Error while fetching: ${response.statusText}`);
+        }).then(responseData => {
+            if (responseData.errors.length === 0) return responseData.data;
+            throw new Error(JSON.stringify(responseData.errors));
+        }
+        )
+        .catch(error => console.error("Error: ", error));
+}
+
+
+function onGetAllUsers(event){
+    event.preventDefault();
+    clearResultContainer();
+    getAllUsers().then(response => { userTable(response) })
+}
+
+function getUserById(id){
+    return fetch(`https://test-users-api.herokuapp.com/users/${id}`)
+        .then(response => {
+            if (response.ok) return response.json();
+            throw new Error(`Error while fetching: ${response.statusText}`);
+        })
+        .then(responseData => { 
+            if (responseData.errors.length === 0) return responseData.data;
+            throw new Error(JSON.stringify(responseData.errors));
+        }).catch(error => console.error("Error: ", error));
+}
+
+
+function onGetUserById(event) {
+    event.preventDefault();
+    clearResultContainer();
+    getUserById(getUserInput.value).then(response => { userTable(response) });
+    event.target.reset();
+}
+
+
+function addUser({ name, age }) {
+    return fetch('https://test-users-api.herokuapp.com/users/', {
+        method: 'POST',
+        body: JSON.stringify({ name, age }),
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        }
+    })
+        .then(response => {
+            if (response.ok) return response.json();
+            throw new Error(`Error while fetching: ${response.statusText}`);
+        })
+        .then(responseData => {
+            if (responseData.errors.length === 0) return responseData.data;
+            throw new Error(JSON.stringify(responseData.errors));
+        })
+        .catch(error => console.error("Error: ", error));
+}
+
+
+function onAddUser(event) {
+    event.preventDefault();
+    clearResultContainer();
+    addUser({ name: getUserName.value, age: getUserAge.value }).then(user => {
+        const newUser = {
+            id: user._id,
+            name: user.name,
+            age: user.age
+        }
+        let message = 'User added successfully';
+        statusMessage(message);
+        userTable(newUser);
+
+    }
+    )
+    event.target.reset();
+
+}
+
 function removeUser(id) {
-  const newUrl = apiUrl + id;
-  return fetch(newUrl, {
-    method: 'DELETE',
-  })
-    .then(response => {
-      if (response.ok) {
-        alert(`Success: ${response.status}`);
-        return response.json();
-      }
-      throw new Error('Error' + response.statusText);
+    return fetch(`https://test-users-api.herokuapp.com/users/${id}`, {
+        method: 'DELETE',
     })
-    .catch(err => console.log(err));
+        .then(response => {
+            if (response.ok) return response.json();
+            throw new Error(`Error while fetching: ${response.statusText}`);
+        })
+        .then(responseData => {
+            if (responseData.errors.length === 0) return responseData.data;
+            throw new Error(JSON.stringify(responseData.errors));
+        })
+        .catch(error => console.error(error));
 }
-function updateUser(id, user) {
-  const newUrl = apiUrl + id;
-  return fetch(newUrl, {
-    method: 'PUT',
-    body: JSON.stringify(user),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then(response => {
-      if (response.ok) {
-        alert(`Success: ${response.status}`);
-        return response.json();
-      }
-      throw new Error('Error' + response.statusText);
+
+function onRemoveUser(event) {
+    event.preventDefault();
+    clearResultContainer();
+    removeUser(getUserRemoveId.value).then(user => {
+        let message = 'User deleted successfully'
+        statusMessage(message);
+        userTable(user);
+    });
+    event.target.reset();
+
+}
+
+
+
+
+function updateUser({ userId, name, age }) {
+
+    return fetch(`https://test-users-api.herokuapp.com/users/${userId}`, {
+        method: 'PUT',
+        body: JSON.stringify({ name, age }),
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
     })
-    .catch(err => console.log(err));
+        .then(response => {
+            if (response.ok) return response.json();
+            throw new Error('Error: ' + response.statusText);
+        })
+        .then(responseData => {
+            
+            if (responseData.errors.length === 0) return responseData.data;
+            throw new Error(JSON.stringify(responseData.errors));
+        })
+        .catch(error => console.error(error));
 }
+
+function onUpdateUser(event) {
+    event.preventDefault();
+    clearResultContainer();
+    updateUser({
+        userId: getUserUpdateId.value,
+        name: getUserUpdateName.value,
+        age: getUserUpdateAge.value,
+    }).then(user => {
+        let message = 'User updated successfully'
+        statusMessage(message);
+        userTable(user);
+    });
+    event.target.reset();
+}
+
+
+
+
+allUsers.addEventListener('click', onGetAllUsers);
+getAddFrom.addEventListener('submit', onAddUser);
+getRemoveForm.addEventListener('submit', onRemoveUser);
+getUserForm.addEventListener('submit', onGetUserById);
+getUpdateForm.addEventListener('submit', onUpdateUser);

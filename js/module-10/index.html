@@ -8,42 +8,44 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-      <section class="section">
-          <div class="container getAll">
-              <form class="getAll-form">
-                  <button class="mdc-btn js-getAll" type="submit">getAll</button>
+    <div class="wrapper">
+
+      <ul class="nav">
+          <li>
+              <button class='btn all-users'>Get all users</button>
+          </li>
+          <li>
+              <form class="nav-form id-user-form">
+                  <input type="text" class="id-user-input" placeholder="ID">
+                  <button type="submit" class="btn id-user-button">Get user</button>
               </form>
-              <p class="result js-resGetAll"></p>
-          </div>
-          <div class="container getUserById">
-              <form class="getUserById-form">
-                  <input class="userIdInput" type="text" name="userId" placeholder="Enter user id">
-                  <button class="mdc-btn js-getUserById" type="submit">get</button>
+          </li>
+          <li>
+              <form class="nav-form add-user-form">
+                  <input type="text" class="add-user-name" placeholder="Name" value="">
+                  <input type="text" class="add-user-age" placeholder="Age">
+                  <button type="submit" class="btn add-user-button">Add user</button>
               </form>
-              <p class="result js-resGetUserById"></p>
-          </div>
-          <div class="container addUser">
-              <form class="addUser-form">
-                  <input class="addUserName" type="text" name="userName" placeholder="Enter user name">
-                  <input class="addUserAge" type="text" name="userAge" placeholder="Enter user age">
-                  <button class="mdc-btn js-addUser" type="submit">add</button>
+          </li>
+          <li>
+              <form class="nav-form remove-user-form">
+                  <input type="text" class="remove-user-input" placeholder="ID">
+                  <button type="submit" class="btn remove-user-button">Remove</button>
               </form>
-          </div>
-          <div class="container removeUser">
-              <form class="removeUser-form">
-                  <input class="removeById" type="text" name="userId" placeholder="Enter user id">
-                  <button class="mdc-btn js-removeUser" type="submit">remove</button>
+          </li>
+
+          <li>
+              <form class="nav-form update-user-form">
+                  <input type="text" class="update-user-id" placeholder="ID">
+                  <input type="text" class="update-user-name" placeholder="Name">
+                  <input type="text" class="update-user-age" placeholder="Age">
+                  <button type="submit" class="btn update-user-button">Update user</button>
               </form>
-          </div>
-          <div class="container updateUser">
-              <form class="updateUser-form">
-                  <input class="updateById" type="text" name="userId" placeholder="Enter user id">
-                  <input class="updateUserName" type="text" name="userName" placeholder="Enter new user name">
-                  <input class="updateUserAge" type="text" name="userAge" placeholder="Enter new user age">
-                  <button class="mdc-btn js-updateUser" type="submit">update</button>
-              </form>
-          </div>
-      </section>
+          </li>
+      </ul>
+      <div class="response">
+      </div>
+  </div>
    
     <script src="js/scripts.js"></script>
   </body>
